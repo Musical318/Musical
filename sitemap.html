@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical | Site Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Specific styles for the Sitemap to keep it clean */
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        .sitemap-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #121212;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        h1 { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h2 { margin-top: 20px; font-size: 1.2rem; color: #b3b3b3; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin: 10px 0; padding-left: 20px; border-left: 2px solid #1db954; } /* Green accent */
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        a:hover { color: #1db954; text-decoration: underline; }
+        .back-link { display: inline-block; margin-top: 30px; color: #b3b3b3; }
+    </style>
+</head>
+<body>
+
+<div class="sitemap-container">
+    <h1>Site Map</h1>
+    <p>Overview of the available content on Musical.</p>
+
+    <h2>Main Navigation</h2>
+    <ul>
+        <li><a href="index.html"><i data-lucide="house"></i> Home</a></li>
+        <li><a href="search.html"><i data-lucide="search"></i> Search</a></li>
+        <li><a href="library.html"><i data-lucide="library"></i> Your Library</a></li>
+        <li><a href="liked.html"><i data-lucide="heart"></i> Liked Songs</a></li>
+    </ul>
+
+    <h2>User Account</h2>
+    <ul>
+        <li><a href="signup.html"><i data-lucide="user-plus"></i> Sign Up / Register</a></li>
+    </ul>
+
+
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
