@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Musical | Liked Songs</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="app">
+  <div class="sidebar">
+    <h1 class="brand-name">Musical<img src="logo.png" alt="Logo" style="width: 35px; height: 35px; object-fit: contain;"></h1>
+  
+  <a href="index.html" class="nav-item active">
+    <i data-lucide="house"></i>
+    <span>Home</span>
+  </a>
+
+  <a href="search.html" class="nav-item">
+    <i data-lucide="search"></i>
+    <span>Search</span>
+  </a>
+
+  <div style="margin: 10px 0; height: 1px; background: #282828; width: 100%;"></div>
+
+  <a href="library.html" class="nav-item">
+    <i data-lucide="library"></i>
+    <span>Your Library</span>
+  </a>
+
+  <a href="liked.html" class="nav-item">
+    <div class="liked-icon-box">
+      <i data-lucide="heart"></i>
+    </div>
+    <span>Liked Songs</span>
+  </a>
+</div>
+
+  <div class="main" style="padding: 0;"> <div class="playlist-header">
+      <div class="liked-badge">💜</div>
+      <div class="playlist-details">
+        <p>Playlist</p>
+        <h1>Liked Songs</h1>
+        <p><strong>Your Name</strong> • <span id="songCount">0</span> songs</p>
+      </div>
+    </div>
+
+    <div class="playlist-body">
+      <div class="action-bar">
+        <button class="big-play">▶</button>
+      </div>
+
+      <table class="song-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Album</th>
+            <th>Date added</th>
+            <th>🕒</th>
+          </tr>
+        </thead>
+        <tbody id="likedSongsList">
+  <tr>
+    <td>1</td>
+    <td>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="mangu gambo.png" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+        <div>
+          <div style="color: white; font-weight: 500;">Mangu</div>
+          <div style="font-size: 12px; color: #b3b3b3;">Fourtwnty</div>
+        </div>
+      </div>
+    </td>
+    <td>Indie</td>
+    <td>Dec 1, 2023</td>
+    <td>4:13</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="Igauan Malam gambo.png" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+        <div>
+          <div style="color: white; font-weight: 500;">Igauan Malam</div>
+          <div style="font-size: 12px; color: #b3b3b3;">Insomniacks</div>
+        </div>
+      </div>
+    </td>
+    <td>Indie</td>
+    <td>Nov 1, 2024</td>
+    <td>3:53</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="Hitam Putih gambo.png" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+        <div>
+          <div style="color: white; font-weight: 500;">Hitam Putih</div>
+          <div style="font-size: 12px; color: #b3b3b3;">Fourtwnty</div>
+        </div>
+      </div>
+    </td>
+    <td>Indie</td>
+    <td>Feb 20, 2018</td>
+    <td>3:51</td>
+  </tr>
+
+  <tr>
+    <td>4</td>
+    <td>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="Untungnya gambo.png" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+        <div>
+          <div style="color: white; font-weight: 500;">Untungnya, Hidup Harus Tetap Berjalan</div>
+          <div style="font-size: 12px; color: #b3b3b3;">Bernadya</div>
+        </div>
+      </div>
+    </td>
+    <td>Indie</td>
+    <td>Jun 24, 2024</td>
+    <td>3:34</td>
+  </tr>
+
+  <tr>
+    <td>5</td>
+    <td>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="Kembali Pulang gambo.png" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+        <div>
+          <div style="color: white; font-weight: 500;">Kembali Pulang</div>
+          <div style="font-size: 12px; color: #b3b3b3;">Feby Putri ft. Suara Kayu</div>
+        </div>
+      </div>
+    </td>
+    <td>Indie</td>
+    <td>Oct 28, 2022</td>
+    <td>3:44</td>
+  </tr>
+</tbody>
+  </div>
+
+  <div class="right-panel">
+    <h3>Now Playing</h3>
+    <img id="largeCover" src="" style="width: 100%; border-radius: 8px; margin: 15px 0;">
+    <h2 id="largeTitle">Select a song</h2>
+    <p id="largeArtist"></p>
+  </div>
+</div>
+
+<div class="player">
+  <div class="player-left">
+    <img id="playerCover" src="https://picsum.photos/50" alt="Cover">
+    <div class="player-song-info">
+      <div id="playerTitle" class="player-title">Not Playing</div>
+      <div id="playerArtist" class="player-artist"></div>
+    </div>
+    <div class="player-icons">
+      <i data-lucide="circle-minus"></i>
+      <i data-lucide="circle-plus"></i>
+    </div>
+  </div>
+
+  <div class="player-center">
+    <div class="control-buttons">
+      <i data-lucide="shuffle"></i>
+      <i data-lucide="skip-back"></i>
+      <div class="play-circle">
+        <i data-lucide="play" fill="black"></i>
+      </div>
+      <i data-lucide="skip-forward"></i>
+      <i data-lucide="repeat"></i>
+    </div>
+    <div class="progress-container">
+      <span class="time">0:00</span>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 30%;"></div>
+      </div>
+      <span class="time">0:00</span>
+    </div>
+  </div>
+
+  <div class="player-right">
+    <i data-lucide="mic-2"></i>
+    <i data-lucide="list-music"></i>
+    <i data-lucide="monitor-speaker"></i>
+    <i data-lucide="volume-2"></i>
+    <div class="volume-bar">
+      <div class="volume-fill" style="width: 70%;"></div>
+    </div>
+    <i data-lucide="maximize-2"></i>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+  // PADAM atau KOMEN baris di bawah ini:
+  // renderLikedTable(); 
+  
+  // Tambah ini supaya icon Lucide tetap keluar:
+  lucide.createIcons();
+
+  // Kemaskini jumlah lagu di header secara manual
+  document.getElementById('songCount').textContent = "5";
+</script>
+
+</body>
+</html>
